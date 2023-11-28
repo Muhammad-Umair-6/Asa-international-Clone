@@ -1,0 +1,853 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+nav{
+  
+  height: 130px;
+  width: 100%;
+    z-index: 9999;
+  
+  background: white;
+}
+nav .wrapper{
+  position: relative;
+  max-width: 1300px;
+  padding: 50px 30px;
+  height: 85px;
+  line-height: 80px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    z-index: 9999;
+}
+
+
+.wrapper .logo img{
+    width: 200px;
+    margin-top: 50px;
+    top
+ 
+}
+.wrapper .nav-links{
+  display: inline-flex;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+  background: #3A3B3C;
+    color: white;
+    
+}
+.nav-links .mobile-item{
+  display: none;
+}
+
+
+  ----------------
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content{
+    border-radius: 5px;
+  background: white;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+    margin-top: 40px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.mega-box .content .row{
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+.content .row h2{
+  color: black;
+}
+.content .row header{
+  color:#67D2F4;
+  font-size: 15px;
+  font-weight: 500;
+}
+.content .row .mega-links{
+  margin-left: -40px;
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+.row .mega-links li{
+  padding: 0 20px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 20px;
+  color: black;
+  font-size: 17px;
+  display: block;
+}
+.row .mega-links li a:hover{
+  color: #f2f2f2;
+}
+.wrapper .btn{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn{
+    display: block;
+  }
+  .wrapper .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #242526;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+  }
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #242526;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+  }
+  #menu-btn:checked ~ .nav-links{
+    left: 0%;
+  }
+  #menu-btn:checked ~ .btn.menu-btn{
+    display: none;
+  }
+  #close-btn:checked ~ .btn.menu-btn{
+    display: block;
+  }
+  .nav-links li{
+    margin: 15px 10px;
+  }
+  .nav-links li a{
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+  .nav-links .drop-menu{
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+  #showDrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box{
+    max-height: 100%;
+  }
+  .nav-links .desktop-item{
+    display: none;
+  }
+  .nav-links .mobile-item{
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links .mobile-item:hover{
+    background: #3A3B3C;
+  }
+  .drop-menu li{
+    margin: 0;
+  }
+  .drop-menu li a{
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .mega-box{
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mega-box .content{
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega-box .content .row{
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2){
+    border-top: 0px;
+  }
+  .content .row .mega-links{
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega-links li{
+    margin: 0;
+  }
+  .content .row header{
+    font-size: 19px;
+  }
+}
+nav input{
+  display: none;
+}
+
+.body-text  {
+    background-image: url(main2.jpg);
+    
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    
+}
+.body-text div{
+    color: white;
+  font-size: 50px;
+  font-weight: 900;
+    
+}
+.body-text .title{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+.body-text .sub-title{
+      position: absolute;
+    top: 60%;
+    left: 30%;
+}
+.body-text a{
+    border: 2px solid #8BC34A;  
+    font-size: 20px; 
+    color: white;
+    padding:15px 20px;;
+    font-family: sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top:75%;
+    left: 40%;
+    border-radius: 50px;
+}
+.body-text a:hover{
+    background: #8BC34A  ;
+    transition: all  1s ease;
+}
+.about{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 70px 50px;
+}
+.about h1{
+    font-size: 40px;
+    
+}
+.about .para{
+    width: 400px;
+    
+    font-family: sans-serif;
+}
+.para span{
+    color: #D2FA89 ;
+    
+}
+.para a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+.para a:hover{
+    color:  #D2FA89 ;
+     transition: all 1s ease;
+}
+.Financial{
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 60px;
+}
+.Financial .image{
+    background-image: url(fruit2.jpg);
+    background-size: 100% 100%;
+    width: 40%;
+    height: 400px;
+}
+
+
+.Financial .right-side span{
+    color: #D2FA89;
+      margin-left: 60px;
+}
+.Financial .right-side .para p{
+    margin-left: 60px;
+}
+.Financial .right-side para a{
+     color: black;
+    text-decoration: none;
+    font-size: 15px;
+      margin-left: 60px;
+}
+
+.right-side h3{
+    font-size: 35px;
+    margin-left: 60px;
+}
+.Responsible-lending{
+    margin-top: 80px;
+      width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+.Responsible-lending .image2{
+     background-image: url(student2.jpg);
+    background-size: 100% 100%;
+    width: 40%;
+    height: 400px;
+}
+.Responsible-lending .left-side{
+     margin-top: 90px;
+}
+.Responsible-lending .left-side span{
+    color: #D2FA89;
+}
+.Responsible-lending .left-side para a{
+      color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+.left-side h4{
+    font-size: 40px;
+}
+.visa{
+    margin-top: 50px ;
+    width: 100%;
+    
+    background:#F7F7F7 ;
+    display: flex;
+    justify-content: space-around;
+}
+.CEO-succession img{
+    margin-top: 30px;
+}
+.CEO-succession a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+.CEO-succession a:hover{
+    color: #D2FA89;
+    transition: all 1s ease;
+}
+.CEO-succession .one{
+    color: black;
+    
+}
+.CEO-succession span{
+    color: #D2FA89;
+    
+    
+    padding: 10px;
+}
+
+.Regulatory-News .link{
+    
+padding: 20px 10px;
+}
+.Regulatory-News .link a{
+    
+    text-decoration: none;
+    color: black;
+}
+.Regulatory-News .link a:hover{
+     color: #D2FA89;
+    transition: all 1s ease;
+}
+.Regulatory-News .link h3{
+    font-size: 15px;
+    
+}
+.Regulatory-News  span{
+        color: #D2FA89;
+    padding: 6px;
+    font-weight: bold;
+}
+.Trading-Update img{
+    margin: 40px;
+}
+.Trading-Update a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+.Trading-Update a:hover{
+     color: #D2FA89;
+    transition: all 1s ease;
+}
+.Trading-Update .two{
+color: #D2FA89 ;
+    font-weight: 900;
+}
+.second-last{
+    width: 100%;
+
+    background: #24262D;
+    text-align: center;
+    
+}
+.second-last a{
+    color: white;
+    line-height: 150px;
+    text-decoration: none;
+    border: 2px solid #8BC34A;
+    padding: 15px;
+    border-radius: 50px;
+}
+.second-last a:hover{
+    background: #8BC34A;
+      transition: all 1s ease;
+}
+.point-last{
+    background:#292B33; 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.company h4{
+color: #FFF2CA;
+     margin-top: 50px;
+}
+.company a{
+    text-decoration: none;
+    color:  #95A6AD;
+
+}
+.company a:hover{
+       color: #D2FA89;
+    transition: all 1s ease;
+}
+.operator a{
+    text-decoration: none;
+    color:  #95A6AD;
+
+}
+
+.operator a:hover{
+        color: #D2FA89;
+    transition: all 1s ease;
+}
+.operator h4{
+color: #FFF2CA;
+     margin-top: 50px;
+}
+.SITE-SERVICES h4{
+    color: #FFF2CA;
+    margin-top: 50px;
+}
+.SITE-SERVICES a{
+     text-decoration: none;
+    color:  #95A6AD;
+    
+}
+.SITE-SERVICES a:hover{
+         color: #D2FA89;
+    transition: all 1s ease;
+}
+
+.linkedin  img{
+    width: 30px;
+     margin-top: 50px;
+}
+.linkedin p{
+    color: #95A6AD;
+    font-size: 15px;
+    margin-top: 30px;
+}
+.gmail  img{
+    width: 30px;
+     margin-top: 50px;
+}
+footer{
+     background:#292B33; 
+}
+.last-part{
+    display:flex;
+}
+.last-part img{
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+}
+.last-para{
+    margin: 50px 20px;
+    
+}
+hr{
+color: #95A6AD;
+    margin: 20px 70px ;
+    
+}
+.last-para h4{
+     color: #FFF2CA;
+    margin-bottom: 20px;
+}
+.last-para p{
+    color: #95A6AD;
+    text-align: justify;
+}
+                                             /* ======================== ABOUT PART =================== */
+.heading{
+    background-image: url(oil.jpg);
+    width: 90%;
+    height: 500px;
+    background-size: 100% 100%;
+    margin: 55px 60px;
+    
+}
+.section-part{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 40px;
+   
+}
+.left-side{
+    margin: 20px 40px;
+}
+.left-side span{
+    color:  #D2FA89;
+    font-size: 18px;
+    font-weight: bold;
+}
+.left-side h1{
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.link a{
+   
+    text-decoration: none;
+    color: black;
+font-size: 20px;
+    
+}
+.link a:hover{
+     position: relative;
+    color: #6DA9A2;
+    padding-left: 8px;
+    border-left: 4px solid #8BC34A;
+    transform: translateX(90px);
+    transition: all .3s ease;
+}
+.right-side{
+    width: 70%;
+
+}
+.right-side hr{
+    margin-top: -40px;
+    width: 90%;
+    
+}
+#image-part img{
+    
+    margin: 80px 43px
+}
+.number-part {
+    display: flex;
+    justify-content: space-around;
+    margin:20px 50px;
+    
+}
+.number-part p{
+    font-size: 20px;
+}
+.number-part2{
+     display: flex;
+    justify-content: space-around;
+    margin: 7px 50px;
+}
+.number-part2 span{
+     color:  #D2FA89;
+    font-weight: bold;
+}
+.part-section{
+    width: 100%;
+    
+}
+.part-section hr{
+    margin-top: 30px;
+}
+.para-part{
+    width: 90%;
+}
+.para-part p{
+    font-size: 10px;
+    margin:40px 70px; 
+}
+.International{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.MISSION{
+    
+    width: 40%;
+}
+.MISSION span{
+    
+      color:  #D2FA89;
+    font-weight: bold;
+    
+}
+.MISSION p{
+    color: #BEC3C4   ;
+    margin-top: 20px;
+}
+.MISSION a{
+    text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+.PURPOSE {
+    
+    width: 40%;
+}
+.PURPOSE  span{
+       color:  #D2FA89;
+    font-weight: bold;
+}
+.PURPOSE p{
+    color: #BEC3C4  ;
+    margin-top: 20px;
+}
+.PURPOSE a{
+    text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+.lending{
+      width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+.WHAT  {
+    width: 40%;
+}
+.WHAT  span{
+    
+       color:  #D2FA89;
+    font-weight: bold;
+}
+.WHAT  p{
+    color: #BEC3C4  ;
+    margin-top: 20px;
+}
+.WHAT  a{
+    text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+.operations {
+     width: 40%;
+}
+.operations span{
+    
+       color:  #D2FA89;
+    font-weight: bold;
+}
+.operations p{
+    color: #BEC3C4  ;
+    margin-top: 20px;
+}
+.operations a{
+    text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+.model{
+    margin-bottom: 30px;
+       width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+.Scalable,.poverty{
+     width: 40%;
+}
+.Scalable span{
+    
+       color:  #D2FA89;
+    font-weight: bold;
+}
+.Scalable .last-link {
+    color: #7BAFE9;
+}
+.Scalable  p{
+    color: #BEC3C4  ;
+    margin-top: 20px;
+}
+.Scalable a{
+     text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+.poverty  span{
+    
+       color:  #D2FA89;
+    font-weight: bold;
+
+}
+  .poverty p{
+    color: #BEC3C4  ;
+    margin-top: 20px;
+}
+.poverty  a{
+     text-decoration: none;
+    font-size: 18px;
+    color: blue;
+}
+
+                      /*================================== CLIENTS STORIES =================================== */
+.image-part {
+    background-image: url(client.jpg);
+    width: 90%;
+    height: 500px;
+    background-size: 100% 100%;
+    margin: 55px 60px;
+}
+.coca{
+    width: 70%;
+    
+}
+.coca p{
+    
+    font-size: 20px;
+    margin: 40px 65px;
+}
+.all-link a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 80px;
+    color: black;
+}
+.all-link a:hover{
+    color:  #D2FA89 ;
+    transition: all 1s ease;
+}
+.all-link span{
+    color: #D2FA89;
+}   
+                  /*================================= Corpaorate ==========================*/
+
+
+.image-part2{
+      background-image: url(corporate.jpg);
+    width: 90%;
+    height: 500px;
+    background-size: 100% 100%;
+    margin: 55px 60px;
+}
+.right-side{
+    width: 70%;
+    
+    
+}
+.umair p{
+    font-size: 20px;
+    
+    
+    margin-top: 190px;
+}
+.umair img{
+    margin-top: 35px;
+}
+.all-paragraph #third-para a{
+    text-decoration: none;
+}
+.all-paragraph p{
+    color:#726F70;
+}
+.umair-link span{
+    margin-left: 80px;
+    color: #D2FA89;
+    font-size: 25px;
+    
+}
+.umair-link a{
+     text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    
+    color: black;
+}
+.umair-link a:hover{
+     color:  #D2FA89 ;
+    transition: all 1s ease;
+}
